@@ -96,16 +96,31 @@
 
 
 
-<meta name="description" content="Hexo 初识Hexo对于初学者来说无疑是带有神秘色彩的，它的主题方案很引人注目，Landscape主题算是比较常见的，个人主页中的图片可以定时切换，">
+<meta name="description" content="Top-Level API For ReactReact是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。
+React.Component
+当你定义使用ES6语法时，这个是React组件类的基础类。
+
+
+React.createClass createClass(必须有rende">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2016/05/30/React/index.html">
+<meta property="og:title" content="react4">
+<meta property="og:url" content="http://yoursite.com/2016/11/07/react/react4/index.html">
 <meta property="og:site_name" content="Springer of the spring">
-<meta property="og:description" content="Hexo 初识Hexo对于初学者来说无疑是带有神秘色彩的，它的主题方案很引人注目，Landscape主题算是比较常见的，个人主页中的图片可以定时切换，">
-<meta property="og:updated_time" content="2016-05-30T15:03:12.355Z">
+<meta property="og:description" content="Top-Level API For ReactReact是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。
+React.Component
+当你定义使用ES6语法时，这个是React组件类的基础类。
+
+
+React.createClass createClass(必须有rende">
+<meta property="og:updated_time" content="2016-11-07T14:44:19.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Hexo 初识Hexo对于初学者来说无疑是带有神秘色彩的，它的主题方案很引人注目，Landscape主题算是比较常见的，个人主页中的图片可以定时切换，">
+<meta name="twitter:title" content="react4">
+<meta name="twitter:description" content="Top-Level API For ReactReact是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。
+React.Component
+当你定义使用ES6语法时，这个是React组件类的基础类。
+
+
+React.createClass createClass(必须有rende">
 
 
 
@@ -126,9 +141,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/05/30/React/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/07/react/react4/"/>
 
-  <title> Hexo | Springer of the spring </title>
+  <title> react4 | Springer of the spring </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +273,7 @@
             
             
               
-                Hexo
+                react4
               
             
           </h1>
@@ -270,8 +285,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T21:17:10+08:00" content="2016-05-30">
-              2016-05-30
+            <time itemprop="dateCreated" datetime="2016-11-07T21:04:48+08:00" content="2016-11-07">
+              2016-11-07
             </time>
           </span>
 
@@ -298,7 +313,24 @@
       
 
       
-        <h2 id="Hexo-初识"><a href="#Hexo-初识" class="headerlink" title="Hexo 初识"></a>Hexo 初识</h2><p>Hexo对于初学者来说无疑是带有神秘色彩的，它的主题方案很引人注目，Landscape主题算是比较常见的，个人主页中的图片<br>可以定时切换，</p>
+        <h2 id="Top-Level-API-For-React"><a href="#Top-Level-API-For-React" class="headerlink" title="Top-Level API For React"></a>Top-Level API For React</h2><h5 id="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。"><a href="#React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。" class="headerlink" title="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。"></a>React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。</h5><ul>
+<li>React.Component<ul>
+<li>当你定义使用ES6语法时，这个是React组件类的基础类。</li>
+</ul>
+</li>
+<li>React.createClass createClass(必须有render方法)<ul>
+<li>创建一个组件类，给一个定义。一个组件包括一个返回一个单一子结构的render方法，这个子结构也许还有一个任意深度的子结构。使得组件不同于标准原型类的一点就是你不需要用new去定义它们，实例化。它们是很简洁的封装，可以为你在后台创建实例。</li>
+</ul>
+</li>
+<li>React.createElement<ul>
+<li>ReactElement(string/ReactClass type自己定义的类名也行，props 属性，children 子结构)<br>  创建并且返回一个新的给定类型的ReactElement，type参数可以是一个html标签名称字符串也可以是一个ReactClass(可以创建于React.createClass)。</li>
+</ul>
+</li>
+<li>React.cloneElement<ul>
+<li>克隆并且返回一个新的、用element作为开始的ReactElement，</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -323,17 +355,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/29/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/07/10/css/css/" rel="next" title="css">
+                <i class="fa fa-chevron-left"></i> css
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/31/react/react1/" rel="prev" title="reactFirst">
-                reactFirst <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -447,7 +475,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-初识"><span class="nav-number">1.</span> <span class="nav-text">Hexo 初识</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Top-Level-API-For-React"><span class="nav-number">1.</span> <span class="nav-text">Top-Level API For React</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

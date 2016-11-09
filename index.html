@@ -260,6 +260,117 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/07/react/react4/" itemprop="url">
+                  react4
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-07T21:04:48+08:00" content="2016-11-07">
+              2016-11-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Top-Level-API-For-React"><a href="#Top-Level-API-For-React" class="headerlink" title="Top-Level API For React"></a>Top-Level API For React</h2><h5 id="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。"><a href="#React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。" class="headerlink" title="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。"></a>React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。</h5><ul>
+<li>React.Component<ul>
+<li>当你定义使用ES6语法时，这个是React组件类的基础类。</li>
+</ul>
+</li>
+<li>React.createClass createClass(必须有render方法)<ul>
+<li>创建一个组件类，给一个定义。一个组件包括一个返回一个单一子结构的render方法，这个子结构也许还有一个任意深度的子结构。使得组件不同于标准原型类的一点就是你不需要用new去定义它们，实例化。它们是很简洁的封装，可以为你在后台创建实例。</li>
+</ul>
+</li>
+<li>React.createElement<ul>
+<li>ReactElement(string/ReactClass type自己定义的类名也行，props 属性，children 子结构)<br>  创建并且返回一个新的给定类型的ReactElement，type参数可以是一个html标签名称字符串也可以是一个ReactClass(可以创建于React.createClass)。</li>
+</ul>
+</li>
+<li>React.cloneElement<ul>
+<li>克隆并且返回一个新的、用element作为开始的ReactElement，</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/10/css/css/" itemprop="url">
                   css
                 </a>
@@ -399,7 +510,9 @@
       
         
           
-            <h2 id="函数作用域和块作用域"><a href="#函数作用域和块作用域" class="headerlink" title="函数作用域和块作用域"></a>函数作用域和块作用域</h2>
+            <h2 id="函数作用域和块作用域"><a href="#函数作用域和块作用域" class="headerlink" title="函数作用域和块作用域"></a>函数作用域和块作用域</h2><p>1.最小授权或者叫最小暴露原则<br>    我的理解：如果一个函数中需要调用另外一个函数，而另外这个函数若不在其他函数作用域中被调用，则可以把这个函数及其函数体放在这个需要调用它的函数中</p>
+<p>2.用var命名变量时避免冲突</p>
+
           
         
       
@@ -1257,7 +1370,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
