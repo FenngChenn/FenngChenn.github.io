@@ -112,7 +112,7 @@ React.Component
 
 
 React.createClass createClass(必须有rende">
-<meta property="og:updated_time" content="2016-11-07T14:44:19.573Z">
+<meta property="og:updated_time" content="2016-11-09T14:24:45.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react4">
 <meta name="twitter:description" content="Top-Level API For ReactReact是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。
@@ -323,11 +323,11 @@ React.createClass createClass(必须有rende">
 </ul>
 </li>
 <li>React.createElement<ul>
-<li>ReactElement(string/ReactClass type自己定义的类名也行，props 属性，children 子结构)<br>  创建并且返回一个新的给定类型的ReactElement，type参数可以是一个html标签名称字符串也可以是一个ReactClass(可以创建于React.createClass)。</li>
+<li>ReactElement(string/ReactClass type自己定义的类名也行，props 属性，children 子结构)创建并且返回一个新的给定类型的ReactElement，type参数可以是一个html标签名称字符串也可以是一个ReactClass(可以创建于React.createClass)。</li>
 </ul>
 </li>
 <li>React.cloneElement<ul>
-<li>克隆并且返回一个新的、用element作为开始的ReactElement，</li>
+<li>克隆并且返回一个新的、用element作为开始的ReactElement，复制完的元素会继承原有元素的属性还具有它自己新的属性，新的子结构会代替原有的子结构，就是说原来的子元素也会被覆盖。不像React.addons.cloneWithProps，key和ref也会从原来的元素中被保留复制下来，在结合这些属性的时候没有特殊的情况(不像cloneWithProps)。</li>
 </ul>
 </li>
 </ul>
