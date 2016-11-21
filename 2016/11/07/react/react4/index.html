@@ -112,7 +112,7 @@ React.Component
 
 
 React.createClass createClass(必须有rende">
-<meta property="og:updated_time" content="2016-11-09T14:24:45.348Z">
+<meta property="og:updated_time" content="2016-11-10T15:33:18.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react4">
 <meta name="twitter:description" content="Top-Level API For ReactReact是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。
@@ -330,6 +330,14 @@ React.createClass createClass(必须有rende">
 <li>克隆并且返回一个新的、用element作为开始的ReactElement，复制完的元素会继承原有元素的属性还具有它自己新的属性，新的子结构会代替原有的子结构，就是说原来的子元素也会被覆盖。不像React.addons.cloneWithProps，key和ref也会从原来的元素中被保留复制下来，在结合这些属性的时候没有特殊的情况(不像cloneWithProps)。</li>
 </ul>
 </li>
+<li>React.createFactory<ul>
+<li>返回一个能生成给定类型的ReactElement的方法，像React.createElement，参数类型可以是html标签字符串类型，例如div、span等等，也可以是一个ReactClass。</li>
+</ul>
+</li>
+<li>React.isValidElement<ul>
+<li>检查这个元素是不是ReactElement</li>
+</ul>
+</li>
 </ul>
 
       
@@ -362,6 +370,10 @@ React.createClass createClass(必须有rende">
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/08/react/react5/" rel="prev" title="react5">
+                react5 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -429,7 +441,7 @@ React.createClass createClass(必须有rende">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
