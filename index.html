@@ -332,6 +332,8 @@
 <p>先开始向父元素添加一个click事件监听器，当这个事件监听器被触发，检查事件元素来确定做出反应的元素类型，如果是一个li元素，哈！我们得到了我们想要的！如果不是我们想要的一个元素，这个事件可以忽略。<br>这个例子是个相当简单的————ul和li作为一个直截了当的比较，让我们增加一些难度，现在有个具有很多子元素的父元素div，但是我们关心的是一个A标签带有classA的css类：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Get the parent DIV, add click listener...</span><br><span class="line">document.getElementById(&quot;myDiv&quot;).addEventListener(&quot;click&quot;,function(e) &#123;</span><br><span class="line">  // e.target was the clicked element</span><br><span class="line">  if (e.target &amp;&amp; e.target.matches(&quot;a.classA&quot;)) &#123;</span><br><span class="line">    console.log(&quot;Anchor element clicked!&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>利用<a href="https://davidwalsh.name/element-matches-selector" target="_blank" rel="external">Element.matches API</a>我们就可以看见元素匹配着我们想要的目标元素。<br>自从大多数开发者使用javascript库用于他们的DOM元素和操作事件，当他们可以高级委托和识别元素时，我推荐使用事件委托的方法，</p>
+
           
         
       
