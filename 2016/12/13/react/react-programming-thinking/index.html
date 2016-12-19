@@ -116,7 +116,7 @@
 先建立一个react静态版本
 需要使用props来建立静态版本而不需要使用state，state是为了时间变化的数据所准备的。组件中的层级是父子关系，props是一种从父级传递数据到子级的方式。
 当项目较">
-<meta property="og:updated_time" content="2016-12-18T13:35:07.799Z">
+<meta property="og:updated_time" content="2016-12-19T14:20:25.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-programming-thinking">
 <meta name="twitter:description" content="Thinking in React
@@ -353,6 +353,10 @@
 <h2 id="props-vs-state"><a href="#props-vs-state" class="headerlink" title="props vs state"></a>props vs state</h2><ul>
 <li>props作为从父级传递子级数据的方式，仅仅适合于静态文件，而当页面中数据需要变动时不适用</li>
 </ul>
+<p>3.确定最小的UI State表达</p>
+<blockquote>
+<p>这三个问题则是判断是不是state的关键点<br>1.它是通过props从父级传递来的吗？如果是，它可能不是 state。<br>2.它随时间变化吗？如果不是,它可能不是 state。<br>3.你能基于其他任何组件里的 state 或者 props 计算出它吗？如果是,它可能不是state.</p>
+</blockquote>
 
       
     </div>
