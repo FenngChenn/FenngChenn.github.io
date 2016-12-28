@@ -116,7 +116,7 @@
 先建立一个react静态版本
 需要使用props来建立静态版本而不需要使用state，state是为了时间变化的数据所准备的。组件中的层级是父子关系，props是一种从父级传递数据到子级的方式。
 当项目较">
-<meta property="og:updated_time" content="2016-12-19T14:20:25.101Z">
+<meta property="og:updated_time" content="2016-12-28T03:43:59.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-programming-thinking">
 <meta name="twitter:description" content="Thinking in React
@@ -355,7 +355,16 @@
 </ul>
 <p>3.确定最小的UI State表达</p>
 <blockquote>
-<p>这三个问题则是判断是不是state的关键点<br>1.它是通过props从父级传递来的吗？如果是，它可能不是 state。<br>2.它随时间变化吗？如果不是,它可能不是 state。<br>3.你能基于其他任何组件里的 state 或者 props 计算出它吗？如果是,它可能不是state.</p>
+<p>这三个问题则是判断是不是state的关键点<br>(1).它是通过props从父级传递来的吗？如果是，它可能不是 state。<br>(2).它随时间变化吗？如果不是,它可能不是 state。<br>(3).你能基于其他任何组件里的 state 或者 props 计算出它吗？如果是,它可能不是state.</p>
+</blockquote>
+<p>4.确定state应该在哪里</p>
+<blockquote>
+<p>确定哪个组件可以修改或者拥有着这个state<br>记住：React在组件层级中是单向数据流动的</p>
+<ul>
+<li>确定哪些组件是根据state来渲染内容的</li>
+<li>找到一个所有需要state的组件的父级，这个父级必须要在目标组件之上，并且只有一个</li>
+<li>如果找不到这样一个更高的层级，那么就简单的创建一个新的组件，并把它添加到比共同拥有者组件更高的层级上</li>
+</ul>
 </blockquote>
 
       
