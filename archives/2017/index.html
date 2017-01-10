@@ -96,28 +96,15 @@
 
 
 
-<meta name="description" content="组件生命周期
-在es6中，一个组件类由extends Component来创建，并提供render方法和其他可选的生命周期函数、组件相关事件或方法定义
-getInitialState,初始化this.state的值，只在组件装载之前调用一次
-es6当中，也可以在构造函数中初始化状态，比如：
-123456789class Counter extends Component&amp;#123;	constru">
-<meta property="og:type" content="article">
-<meta property="og:title" content="React学习三——react组件生命周期">
-<meta property="og:url" content="http://yoursite.com/2016/06/13/react/react3/index.html">
+<meta name="description" content="藏在程序猿中的happy girl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Springer of the spring">
+<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
 <meta property="og:site_name" content="Springer of the spring">
-<meta property="og:description" content="组件生命周期
-在es6中，一个组件类由extends Component来创建，并提供render方法和其他可选的生命周期函数、组件相关事件或方法定义
-getInitialState,初始化this.state的值，只在组件装载之前调用一次
-es6当中，也可以在构造函数中初始化状态，比如：
-123456789class Counter extends Component&amp;#123;	constru">
-<meta property="og:updated_time" content="2016-12-11T14:29:07.502Z">
+<meta property="og:description" content="藏在程序猿中的happy girl">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React学习三——react组件生命周期">
-<meta name="twitter:description" content="组件生命周期
-在es6中，一个组件类由extends Component来创建，并提供render方法和其他可选的生命周期函数、组件相关事件或方法定义
-getInitialState,初始化this.state的值，只在组件装载之前调用一次
-es6当中，也可以在构造函数中初始化状态，比如：
-123456789class Counter extends Component&amp;#123;	constru">
+<meta name="twitter:title" content="Springer of the spring">
+<meta name="twitter:description" content="藏在程序猿中的happy girl">
 
 
 
@@ -138,9 +125,9 @@ es6当中，也可以在构造函数中初始化状态，比如：
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/13/react/react3/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2017/"/>
 
-  <title> React学习三——react组件生命周期 | Springer of the spring </title>
+  <title> 归档 | Springer of the spring </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -161,7 +148,7 @@ es6当中，也可以在构造函数中初始化状态，比如：
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,135 +236,66 @@ es6当中，也可以在构造函数中初始化状态，比如：
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 15 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                React学习三——react组件生命周期
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-13T20:35:48+08:00" content="2016-06-13">
-              2016-06-13
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
-      
-        <h2 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h2><ul>
-<li>在es6中，一个组件类由extends Component来创建，并提供render方法和其他可选的生命周期函数、组件相关事件或方法定义</li>
-<li>getInitialState,初始化this.state的值，只在组件装载之前调用一次</li>
-<li><p>es6当中，也可以在构造函数中初始化状态，比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Counter extends Component&#123;</span><br><span class="line">	constructor(props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123; count: props.initialCount&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	render()&#123;</span><br><span class="line">		//...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>getDefaultsProps只在组件创建时调用一次并缓存返回的对象(就是在React.createClass之后调用)</p>
-</li>
-</ul>
-<ul>
-<li>生命周期函数<ul>
-<li>装载组件触发<br>componentWillMount 在render之前调用，只在装载之前调用一次，在这个方法里可以调用setState改变状态，<br>componentDidMount 在render之后调用，只在装载完成之后调用一次，从这里开始可以通过ReactDOM.findDOMNode(this)获取到组件的DOM节点</li>
-<li>更新组件触发<br>componentWillReceiveProps<br>shouldComponentUpdate<br>componentWillUpdate<br>componentDidUpdate</li>
-<li>卸载组件触发<br>componentWillUnmount</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    <div>
       
         
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/11/ES6/firstLearn/" rel="next" title="ES6学习一">
-                <i class="fa fa-chevron-left"></i> ES6学习一
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/28/ES6/secondLearn/" rel="prev" title="ES6学习二">
-                ES6学习二 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
         </div>
       
+      
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2017/01/10/webpack/webpack/" itemprop="url">
+              
+                <span itemprop="name">webpack-One</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-01-10T21:47:41+08:00"
+              content="2017-01-10" >
+          01-10
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -385,10 +303,6 @@ es6当中，也可以在构造函数中初始化状态，比如：
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -408,17 +322,8 @@ es6当中，也可以在构造函数中初始化状态，比如：
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/springer.jpg"
@@ -468,17 +373,6 @@ es6当中，也可以在构造函数中初始化状态，比如：
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件生命周期"><span class="nav-number">1.</span> <span class="nav-text">组件生命周期</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -582,9 +476,11 @@ es6当中，也可以在构造函数中初始化状态，比如：
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
