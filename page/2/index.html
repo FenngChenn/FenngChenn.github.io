@@ -260,6 +260,116 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/13/react/react3/" itemprop="url">
+                  React学习三——react组件生命周期
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T20:35:48+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h2><ul>
+<li>在es6中，一个组件类由extends Component来创建，并提供render方法和其他可选的生命周期函数、组件相关事件或方法定义</li>
+<li>getInitialState,初始化this.state的值，只在组件装载之前调用一次</li>
+<li><p>es6当中，也可以在构造函数中初始化状态，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Counter extends Component&#123;</span><br><span class="line">	constructor(props)&#123;</span><br><span class="line">		super(props);</span><br><span class="line">		this.state = &#123; count: props.initialCount&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	render()&#123;</span><br><span class="line">		//...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>getDefaultsProps只在组件创建时调用一次并缓存返回的对象(就是在React.createClass之后调用)</p>
+</li>
+</ul>
+<ul>
+<li>生命周期函数<ul>
+<li>装载组件触发<br>componentWillMount 在render之前调用，只在装载之前调用一次，在这个方法里可以调用setState改变状态，<br>componentDidMount 在render之后调用，只在装载完成之后调用一次，从这里开始可以通过ReactDOM.findDOMNode(this)获取到组件的DOM节点</li>
+<li>更新组件触发<br>componentWillReceiveProps<br>shouldComponentUpdate<br>componentWillUpdate<br>componentDidUpdate</li>
+<li>卸载组件触发<br>componentWillUnmount</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/11/ES6/firstLearn/" itemprop="url">
                   ES6学习一
                 </a>
@@ -855,7 +965,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
