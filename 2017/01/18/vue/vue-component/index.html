@@ -96,46 +96,19 @@
 
 
 
-<meta name="description" content="React初识核心思想： 封装组件基础概念：
-
-组件
-JSX 语法
-虚拟DOM
-数据流
-
-插曲 如：import React, { Compnent } from ‘react’;
-
-其中React是react模块的默认方法，所以不用大括号括起来，而我们需要使用到的Compnent方法不是默认方法，所以要大括号括起来才能使用
-此写法是ES6写法，和var React = require(‘reac">
+<meta name="description" content="组件的构成
+组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：![application interface &amp;amp; component tree]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React学习二——react初步学习">
-<meta property="og:url" content="http://yoursite.com/2016/06/06/react/react2/index.html">
+<meta property="og:title" content="vue-component">
+<meta property="og:url" content="http://yoursite.com/2017/01/18/vue/vue-component/index.html">
 <meta property="og:site_name" content="Springer of the spring">
-<meta property="og:description" content="React初识核心思想： 封装组件基础概念：
-
-组件
-JSX 语法
-虚拟DOM
-数据流
-
-插曲 如：import React, { Compnent } from ‘react’;
-
-其中React是react模块的默认方法，所以不用大括号括起来，而我们需要使用到的Compnent方法不是默认方法，所以要大括号括起来才能使用
-此写法是ES6写法，和var React = require(‘reac">
-<meta property="og:updated_time" content="2016-12-11T14:28:54.189Z">
+<meta property="og:description" content="组件的构成
+组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：![application interface &amp;amp; component tree]">
+<meta property="og:updated_time" content="2017-01-18T14:23:36.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React学习二——react初步学习">
-<meta name="twitter:description" content="React初识核心思想： 封装组件基础概念：
-
-组件
-JSX 语法
-虚拟DOM
-数据流
-
-插曲 如：import React, { Compnent } from ‘react’;
-
-其中React是react模块的默认方法，所以不用大括号括起来，而我们需要使用到的Compnent方法不是默认方法，所以要大括号括起来才能使用
-此写法是ES6写法，和var React = require(‘reac">
+<meta name="twitter:title" content="vue-component">
+<meta name="twitter:description" content="组件的构成
+组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：![application interface &amp;amp; component tree]">
 
 
 
@@ -156,9 +129,9 @@ JSX 语法
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/06/react/react2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/18/vue/vue-component/"/>
 
-  <title> React学习二——react初步学习 | Springer of the spring </title>
+  <title> vue-component | Springer of the spring </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -288,7 +261,7 @@ JSX 语法
             
             
               
-                React学习二——react初步学习
+                vue-component
               
             
           </h1>
@@ -300,8 +273,8 @@ JSX 语法
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-06T22:59:43+08:00" content="2016-06-06">
-              2016-06-06
+            <time itemprop="dateCreated" datetime="2017-01-18T22:17:15+08:00" content="2017-01-18">
+              2017-01-18
             </time>
           </span>
 
@@ -314,8 +287,8 @@ JSX 语法
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -347,29 +320,9 @@ JSX 语法
       
 
       
-        <h2 id="React初识"><a href="#React初识" class="headerlink" title="React初识"></a>React初识</h2><p>核心思想： <strong>封装组件</strong><br>基础概念：</p>
-<ul>
-<li>组件</li>
-<li>JSX 语法</li>
-<li>虚拟DOM</li>
-<li>数据流</li>
-</ul>
-<h1 id="插曲"><a href="#插曲" class="headerlink" title="插曲 "></a><em>插曲 </em></h1><p>如：import React, { Compnent } from ‘react’;</p>
-<ul>
-<li>其中React是react模块的默认方法，所以不用大括号括起来，而我们需要使用到的Compnent方法不是默认方法，所以要大括号括起来才能使用</li>
-<li>此写法是ES6写法，和var React = require(‘react’);道理相同</li>
-<li>这句话意思是把这个js文件引入当前的js环境中，以便接下来可以使用</li>
-<li>用babel转换为es5语法时，需要用loader解析js文件</li>
-<li>React组件包含的两个核心概念之一 —— props和state</li>
-<li>当组件状态state有改变的时候，React会自动调用组件的render方法重新渲染整个组件的UI</li>
-<li><p>一般的html代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;http://www.baidu.com&quot;&gt;Hello!&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>  JS代码</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React.creatElement(&apos;a&apos;,&#123;href:&apos;http://www.baidu.com&apos;&#125;,&apos;Hello!&apos;);</span><br></pre></td></tr></table></figure>
-<p>  React.creatElement用来构造组件的DOM树，第一个参数是标签名，第二个参数是标签属性对象，第三个参数是子元素。</p>
-</li>
-<li>JSX中使用注释依然用/**/，延续javascript准则，但是需要用大括号括起来</li>
-</ul>
+        <h2 id="组件的构成"><a href="#组件的构成" class="headerlink" title="组件的构成"></a>组件的构成</h2><blockquote>
+<p>组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：<br>![application interface &amp; component tree]</p>
+</blockquote>
 
       
     </div>
@@ -394,17 +347,13 @@ JSX 语法
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/react/react1/" rel="next" title="React学习一——属性">
-                <i class="fa fa-chevron-left"></i> React学习一——属性
+              <a href="/2017/01/16/vue/vue-start/" rel="next" title="Vue-start">
+                <i class="fa fa-chevron-left"></i> Vue-start
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/11/ES6/firstLearn/" rel="prev" title="ES6学习一">
-                ES6学习一 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -518,7 +467,7 @@ JSX 语法
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React初识"><span class="nav-number">1.</span> <span class="nav-text">React初识</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插曲"><span class="nav-number"></span> <span class="nav-text">插曲 </span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的构成"><span class="nav-number">1.</span> <span class="nav-text">组件的构成</span></a></li></ol></div>
             
           </div>
         </section>

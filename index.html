@@ -260,8 +260,123 @@
             
               
                 
+                <a class="post-title-link" href="/2017/01/18/vue/vue-component/" itemprop="url">
+                  vue-component
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-18T22:17:15+08:00" content="2017-01-18">
+              2017-01-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="组件的构成"><a href="#组件的构成" class="headerlink" title="组件的构成"></a>组件的构成</h2><blockquote>
+<p>组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：<br>![application interface &amp; component tree]</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/16/vue/vue-start/" itemprop="url">
-                  vue-start
+                  Vue-start
                 </a>
               
             
@@ -336,6 +451,9 @@
 <p>想要改变列表，需要改变app4.todos，todos为数组，所以需要push方法</p>
 <h3 id="控制用户输入"><a href="#控制用户输入" class="headerlink" title="控制用户输入"></a>控制用户输入</h3><p>为了让用户和你的app产生交互，可以使用v-on指令来监听事件来调用Vue实例的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-5&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;button v-on:click=&quot;reverseMessage&quot;&gt;Reverse Message&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app5 = new Vue(&#123;</span><br><span class="line">  el: &apos;#app-5&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &apos;Hello Vue.js!&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    reverseMessage: function () &#123;</span><br><span class="line">      this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>在方法中我们简单的更新了app的状态而没有接触到DOM，DOM操作全部由Vue来控制，你写的代码只需要关注基本逻辑。<br>Vue也提供了v-model指令来使得表单输入和应用状态之间的双向绑定很轻而易举：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-6&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;input v-model=&quot;message&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app6 = new Vue(&#123;</span><br><span class="line">  el: &apos;#app-6&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &apos;Hello Vue!&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>这段代码实现了用户在表单中输入的内容实时显示到面板中</li>
+</ul>
 
           
         
@@ -468,7 +586,7 @@
 </li>
 </ul>
 <h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>Nesting(嵌套的) UI is at the core of React Router. Think about any user interface you’re accustomed(习惯于) to, there is likely some shared UI as you navigate around the application.<br>Let’s imagine a little app with a dashboard, inbox, and calendar.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">+---------------------------------------------------------+</span><br><span class="line">| +---------+ +-------+ +--------+                        |</span><br><span class="line">| |Dashboard| | Inbox | |Calendar|      Logged in as Jane |</span><br><span class="line">| +---------+ +-------+ +--------+                        |</span><br><span class="line">+---------------------------------------------------------+</span><br><span class="line">|                                                         |</span><br><span class="line">|                        Dashboard                        |</span><br><span class="line">|                                                         |</span><br><span class="line">|                                                         |</span><br><span class="line">|   +---------------------+    +----------------------+   |</span><br><span class="line">|   |                     |    |                      |   |</span><br><span class="line">|   | +              +    |    +---------&gt;            |   |</span><br><span class="line">|   | |              |    |    |                      |   |</span><br><span class="line">|   | |   +          |    |    +-------------&gt;        |   |</span><br><span class="line">|   | |   |    +     |    |    |                      |   |</span><br><span class="line">|   | |   |    |     |    |    |                      |   |</span><br><span class="line">|   +-+---+----+-----+----+    +----------------------+   |</span><br><span class="line">|                                                         |</span><br><span class="line">+---------------------------------------------------------+</span><br></pre></td></tr></table></figure></p>
-<p>如果没有用react-router的情况下，你可能会在你的&lt;Header/的元素中重复render代码很多次：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">var Header = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;header&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;/inbox&quot;&gt;Inbox&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;/calendar&quot;&gt;Calendar&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">                Logged in as Jane</span><br><span class="line">            &lt;/header&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var DashboardRoute = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Header /&gt;</span><br><span class="line">                &lt;Dashboard /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var InboxRoute = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Header /&gt;</span><br><span class="line">                &lt;Inbox /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var CalendarRoute = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Header /&gt;</span><br><span class="line">                &lt;Calendar /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">otherRouter.route(&apos;/&apos;, function()&#123;</span><br><span class="line">    React.render(&lt;DashboardRoute/&gt;, document.body);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">otherRouter.route(&apos;/&apos;, function()&#123;</span><br><span class="line">    React.render(&lt;InboxRoute/&gt;, document.body);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">otherRouter.route(&apos;/&apos;, function()&#123;</span><br><span class="line">    React.render(&lt;CalendarRoute/&gt;, document.body);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>如果没有用react-router的情况下，你可能会在你的&lt;Header/&gt;的元素中重复render代码很多次：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">var Header = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;header&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;/inbox&quot;&gt;Inbox&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;a href=&quot;/calendar&quot;&gt;Calendar&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">                Logged in as Jane</span><br><span class="line">            &lt;/header&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var DashboardRoute = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Header /&gt;</span><br><span class="line">                &lt;Dashboard /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var InboxRoute = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Header /&gt;</span><br><span class="line">                &lt;Inbox /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var CalendarRoute = React.createClass(&#123;</span><br><span class="line">    render: function()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Header /&gt;</span><br><span class="line">                &lt;Calendar /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">otherRouter.route(&apos;/&apos;, function()&#123;</span><br><span class="line">    React.render(&lt;DashboardRoute/&gt;, document.body);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">otherRouter.route(&apos;/&apos;, function()&#123;</span><br><span class="line">    React.render(&lt;InboxRoute/&gt;, document.body);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">otherRouter.route(&apos;/&apos;, function()&#123;</span><br><span class="line">    React.render(&lt;CalendarRoute/&gt;, document.body);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>这三个主要的view层的render方法几乎是一样的，而共享UI的其中一层好像更容易去控制，更深更深的来添加一些复杂的东西<br>    其它处理可能在你的app里引进了了许多if/else或者switch/case，通过向下app层级传递路由信息比如props</p>
 </blockquote>
@@ -1330,120 +1448,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/29/javascript/unknownjs/" itemprop="url">
-                  unknownjs
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-29T21:46:49+08:00" content="2016-06-29">
-              2016-06-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="函数作用域和块作用域"><a href="#函数作用域和块作用域" class="headerlink" title="函数作用域和块作用域"></a>函数作用域和块作用域</h2><p>1.最小授权或者叫最小暴露原则<br>    我的理解：如果一个函数中需要调用另外一个函数，而另外这个函数若不在其他函数作用域中被调用，则可以把这个函数及其函数体放在这个需要调用它的函数中</p>
-<p>2.用var命名变量时避免冲突</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1489,7 +1493,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
