@@ -97,18 +97,26 @@
 
 
 <meta name="description" content="组件的构成
-组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：![application interface &amp;amp; component tree]">
+组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：
+
+在Vue中，一个组件本质上来说就是一个预定义选项的Vue实例，用Vue简单的来定义一个组件:1234// Define a new component called todo-itemVue.componen">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-component">
 <meta property="og:url" content="http://yoursite.com/2017/01/18/vue/vue-component/index.html">
 <meta property="og:site_name" content="Springer of the spring">
 <meta property="og:description" content="组件的构成
-组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：![application interface &amp;amp; component tree]">
-<meta property="og:updated_time" content="2017-01-18T14:23:36.877Z">
+组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：
+
+在Vue中，一个组件本质上来说就是一个预定义选项的Vue实例，用Vue简单的来定义一个组件:1234// Define a new component called todo-itemVue.componen">
+<meta property="og:image" content="http://cn.vuejs.org/images/components.png">
+<meta property="og:updated_time" content="2017-01-19T14:51:33.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-component">
 <meta name="twitter:description" content="组件的构成
-组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：![application interface &amp;amp; component tree]">
+组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：
+
+在Vue中，一个组件本质上来说就是一个预定义选项的Vue实例，用Vue简单的来定义一个组件:1234// Define a new component called todo-itemVue.componen">
+<meta name="twitter:image" content="http://cn.vuejs.org/images/components.png">
 
 
 
@@ -321,8 +329,12 @@
 
       
         <h2 id="组件的构成"><a href="#组件的构成" class="headerlink" title="组件的构成"></a>组件的构成</h2><blockquote>
-<p>组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：<br>![application interface &amp; component tree]</p>
+<p>组件系统是Vue里面又一个重要的概念，因为这个抽象概念就是允许我们用小型的、独立的、复用的组件构建的大型应用，如果我们想一下，几乎任何类型的应用界面都可以被组件树抽象的画出来：</p>
 </blockquote>
+<p><img src="http://cn.vuejs.org/images/components.png" alt="application interface &amp; component tree"><br>在Vue中，一个组件本质上来说就是一个预定义选项的Vue实例，用Vue简单的来定义一个组件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Define a new component called todo-item</span><br><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  template: &apos;&lt;li&gt;This is a todo&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>现在可以把它和其他组件的模板构成在一起了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;!-- Create an instance of the todo-item component --&gt;</span><br><span class="line">  &lt;todo-item&gt;&lt;/todo-item&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure></p>
+<p><em>如果只写这两段代码的话在页面中是没有效果的</em><br>但是这样会给每一个todo渲染同样的文本，这样就不是很有趣，我们可以通过父作用域传递给子组件数据，让我们来修改一下组件定义使得它可以接受一个prop属性(字段)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  // The todo-item component now accepts a</span><br><span class="line">  // &quot;prop&quot;, which is like a custom attribute.</span><br><span class="line">  // This prop is called todo.</span><br><span class="line">  props: [&apos;todo&apos;],</span><br><span class="line">  template: &apos;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>现在我们可以用v-bind将todo向每个重复的组件传入：<br><strong>实例中 v-bind使用在标签内，用来绑定标签的属性，从而在js中改变标签属性值，而不直接操作DOM！</strong></p>
 
       
     </div>
