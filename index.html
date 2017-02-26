@@ -260,6 +260,240 @@
             
               
                 
+                <a class="post-title-link" href="/2017/02/26/javascript/unknownjs-third/" itemprop="url">
+                  《你不知道的javascript(上)》第二章：词法作用域  读书笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-26T13:15:11+08:00" content="2017-02-26">
+              2017-02-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p><strong>词法作用域意味着作用域由书写代码时函数的位置决定的</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/10/javascript/unknownjs-second/" itemprop="url">
+                  《你不知道的javascript(上)》第一章：作用域是什么  读书笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-10T11:31:25+08:00" content="2017-02-10">
+              2017-02-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>题外话：第二遍读你不知道的javascript，果真是有更深层次的理解，好书值得反复阅读和推敲 ~</em></p>
+<h2 id="作用域是什么"><a href="#作用域是什么" class="headerlink" title="作用域是什么"></a>作用域是什么</h2><p>书中第一章并没有很直接的写出作用域的定义，而是从另一个知识————编译原理来循序渐进的引出<br>词法分析/语法分析等概念，形象的将引擎、编译器和作用域三者是怎么工作的，怎样操作那些代码的过程讲述，如下代码：<br><code>var a = 2;</code><br>编译器负责在<strong>当前作用域</strong>中声明一个变量a，如果之前被声明过，则省略这一步；然后运行的时候引擎会在作用域中查找变量a，如果找到了就赋值给a</p>
+<blockquote>
+<p>读到这里想起第一遍的时候第四章的提升，想起了一句话：声明提前是在javascript引擎的预编<br>译时进行，是在代码开始运行之前，这里有一个规定，那就是函数提升要比变量提升优先，先来看一段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var getName = function()&#123;</span><br><span class="line">  console.log(2);</span><br><span class="line">&#125;</span><br><span class="line">function getName()&#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">getName();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>我第一次得到的答案为1，这段代码涉及了变量提升和函数提升，因为函数提升优先，所以这段代码变为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function getName()&#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">var getName = function()&#123;</span><br><span class="line">  console.log(2);</span><br><span class="line">&#125;</span><br><span class="line">getName();</span><br></pre></td></tr></table></figure></p>
+<p>然后进行变量提升：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var getName;</span><br><span class="line">function getName()&#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">getName = function()&#123;</span><br><span class="line">  console.log(2);</span><br><span class="line">&#125;</span><br><span class="line">getName();</span><br></pre></td></tr></table></figure></p>
+<p>这样函数表达式把函数声明覆盖了，所以输出的是函数表达式中的值，所以是2</p>
+<h2 id="作用域嵌套"><a href="#作用域嵌套" class="headerlink" title="作用域嵌套"></a>作用域嵌套</h2><p>不同的函数作用域不同，如果层级嵌套，那么就形成了一个作用域链，从当前作用域一级一级向全局作用域寻找</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/18/vue/vue-component/" itemprop="url">
                   vue-component
                 </a>
@@ -329,7 +563,11 @@
 <p><img src="http://cn.vuejs.org/images/components.png" alt="application interface &amp; component tree"><br>在Vue中，一个组件本质上来说就是一个预定义选项的Vue实例，用Vue简单的来定义一个组件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Define a new component called todo-item</span><br><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  template: &apos;&lt;li&gt;This is a todo&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>现在可以把它和其他组件的模板构成在一起了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;!-- Create an instance of the todo-item component --&gt;</span><br><span class="line">  &lt;todo-item&gt;&lt;/todo-item&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure></p>
 <p><em>如果只写这两段代码的话在页面中是没有效果的</em><br>但是这样会给每一个todo渲染同样的文本，这样就不是很有趣，我们可以通过父作用域传递给子组件数据，让我们来修改一下组件定义使得它可以接受一个prop属性(字段)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  // The todo-item component now accepts a</span><br><span class="line">  // &quot;prop&quot;, which is like a custom attribute.</span><br><span class="line">  // This prop is called todo.</span><br><span class="line">  props: [&apos;todo&apos;],</span><br><span class="line">  template: &apos;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>现在我们可以用v-bind将todo向每个重复的组件传入：<br><strong>实例中 v-bind使用在标签内，用来绑定标签的属性，从而在js中改变标签属性值，而不直接操作DOM！</strong></p>
+<p>现在我们可以用v-bind将todo向每个重复的组件传入：<br><strong>实例中 v-bind使用在标签内，用来绑定标签的属性，从而在js中改变标签属性值，而不直接操作DOM！</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-7&quot;&gt;</span><br><span class="line">  &lt;ol&gt;</span><br><span class="line">    &lt;!-- Now we provide each todo-item with the todo object    --&gt;</span><br><span class="line">    &lt;!-- it&apos;s representing, so that its content can be dynamic --&gt;</span><br><span class="line">    &lt;todo-item v-for=&quot;item in groceryList&quot; v-bind:todo=&quot;item&quot;&gt;&lt;/todo-item&gt;</span><br><span class="line">  &lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  props: [&apos;todo&apos;],</span><br><span class="line">  template: &apos;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line">var app7 = new Vue(&#123;</span><br><span class="line">  el: &apos;#app-7&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    groceryList: [</span><br><span class="line">      &#123; text: &apos;Vegetables&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Cheese&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Whatever else humans are supposed to eat&apos; &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这只是一个人为假设的例子，但是我们把我们的应用分为了两个小的单元部分，子组件通过props接口合理的从父组件很好的解耦了。我们可以进一步的来优化<todo-item>组件，加入更多复杂的模板以及不影响父应用的逻辑。<br>在大型应用中，将整个应用分离到不同的组件中去，以便更好控制的开发是很必要的，我们在后面的教程中会讨论更多，但是这里有一个(虚构的)    展示一个带组件的应用模板可能会长什么样子的例子。</todo-item></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;app-nav&gt;&lt;/app-nav&gt;</span><br><span class="line">  &lt;app-view&gt;</span><br><span class="line">    &lt;app-sidebar&gt;&lt;/app-sidebar&gt;</span><br><span class="line">    &lt;app-content&gt;&lt;/app-content&gt;</span><br><span class="line">  &lt;/app-view&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1236,220 +1474,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/07/react/react4/" itemprop="url">
-                  React学习四——react顶层API
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-07T21:04:48+08:00" content="2016-11-07">
-              2016-11-07
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Top-Level-API-For-React"><a href="#Top-Level-API-For-React" class="headerlink" title="Top-Level API For React"></a>Top-Level API For React</h2><h5 id="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。"><a href="#React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。" class="headerlink" title="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。"></a>React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。</h5><ul>
-<li>React.Component<ul>
-<li>当你定义使用ES6语法时，这个是React组件类的基础类。</li>
-</ul>
-</li>
-<li>React.createClass createClass(必须有render方法)<ul>
-<li>创建一个组件类，给一个定义。一个组件包括一个返回一个单一子结构的render方法，这个子结构也许还有一个任意深度的子结构。使得组件不同于标准原型类的一点就是你不需要用new去定义它们，实例化。它们是很简洁的封装，可以为你在后台创建实例。</li>
-</ul>
-</li>
-<li>React.createElement<ul>
-<li>ReactElement(string/ReactClass type自己定义的类名也行，props 属性，children 子结构)创建并且返回一个新的给定类型的ReactElement，type参数可以是一个html标签名称字符串也可以是一个ReactClass(可以创建于React.createClass)。</li>
-</ul>
-</li>
-<li>React.cloneElement<ul>
-<li>克隆并且返回一个新的、用element作为开始的ReactElement，复制完的元素会继承原有元素的属性还具有它自己新的属性，新的子结构会代替原有的子结构，就是说原来的子元素也会被覆盖。不像React.addons.cloneWithProps，key和ref也会从原来的元素中被保留复制下来，在结合这些属性的时候没有特殊的情况(不像cloneWithProps)。</li>
-</ul>
-</li>
-<li>React.createFactory<ul>
-<li>返回一个能生成给定类型的ReactElement的方法，像React.createElement，参数类型可以是html标签字符串类型，例如div、span等等，也可以是一个ReactClass。</li>
-</ul>
-</li>
-<li>React.isValidElement<ul>
-<li>检查这个元素是不是ReactElement</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/10/css/css/" itemprop="url">
-                  css
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-10T22:00:18+08:00" content="2016-07-10">
-              2016-07-10
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="CSS揭秘第五章————用户体验"><a href="#CSS揭秘第五章————用户体验" class="headerlink" title="CSS揭秘第五章————用户体验"></a>CSS揭秘第五章————用户体验</h2><p>1.如果想隐藏某个元素，可以用clip属性进行隐藏，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input[type=&quot;checkbox&quot;] &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	clip: rect(0,0,0,0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>clip属性本意为裁剪元素，而且需要注意的是clip属性只能在元素设置了“position:absolute”或者“position:fixed”属性起作用<br>2.background-image: linear-gradient() 线性渐变<br>3.$(“button”).css(“color”)返回的值为rgb值<br>  使用jquery方法相当于element.style[type]</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1495,7 +1519,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

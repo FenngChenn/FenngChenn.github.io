@@ -260,6 +260,220 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/07/react/react4/" itemprop="url">
+                  React学习四——react顶层API
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-07T21:04:48+08:00" content="2016-11-07">
+              2016-11-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Top-Level-API-For-React"><a href="#Top-Level-API-For-React" class="headerlink" title="Top-Level API For React"></a>Top-Level API For React</h2><h5 id="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。"><a href="#React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require-引入React。" class="headerlink" title="React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。"></a>React是React类库的入口。如果你正在使用预编译包的其中一个，那么React可能是一个全局变量；如果你使用的是CommonJS模块，你可以用require()引入React。</h5><ul>
+<li>React.Component<ul>
+<li>当你定义使用ES6语法时，这个是React组件类的基础类。</li>
+</ul>
+</li>
+<li>React.createClass createClass(必须有render方法)<ul>
+<li>创建一个组件类，给一个定义。一个组件包括一个返回一个单一子结构的render方法，这个子结构也许还有一个任意深度的子结构。使得组件不同于标准原型类的一点就是你不需要用new去定义它们，实例化。它们是很简洁的封装，可以为你在后台创建实例。</li>
+</ul>
+</li>
+<li>React.createElement<ul>
+<li>ReactElement(string/ReactClass type自己定义的类名也行，props 属性，children 子结构)创建并且返回一个新的给定类型的ReactElement，type参数可以是一个html标签名称字符串也可以是一个ReactClass(可以创建于React.createClass)。</li>
+</ul>
+</li>
+<li>React.cloneElement<ul>
+<li>克隆并且返回一个新的、用element作为开始的ReactElement，复制完的元素会继承原有元素的属性还具有它自己新的属性，新的子结构会代替原有的子结构，就是说原来的子元素也会被覆盖。不像React.addons.cloneWithProps，key和ref也会从原来的元素中被保留复制下来，在结合这些属性的时候没有特殊的情况(不像cloneWithProps)。</li>
+</ul>
+</li>
+<li>React.createFactory<ul>
+<li>返回一个能生成给定类型的ReactElement的方法，像React.createElement，参数类型可以是html标签字符串类型，例如div、span等等，也可以是一个ReactClass。</li>
+</ul>
+</li>
+<li>React.isValidElement<ul>
+<li>检查这个元素是不是ReactElement</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/10/css/css/" itemprop="url">
+                  css
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-10T22:00:18+08:00" content="2016-07-10">
+              2016-07-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS揭秘第五章————用户体验"><a href="#CSS揭秘第五章————用户体验" class="headerlink" title="CSS揭秘第五章————用户体验"></a>CSS揭秘第五章————用户体验</h2><p>1.如果想隐藏某个元素，可以用clip属性进行隐藏，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input[type=&quot;checkbox&quot;] &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	clip: rect(0,0,0,0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>clip属性本意为裁剪元素，而且需要注意的是clip属性只能在元素设置了“position:absolute”或者“position:fixed”属性起作用<br>2.background-image: linear-gradient() 线性渐变<br>3.$(“button”).css(“color”)返回的值为rgb值<br>  使用jquery方法相当于element.style[type]</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/29/javascript/unknownjs/" itemprop="url">
                   unknownjs
                 </a>
@@ -1187,7 +1401,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

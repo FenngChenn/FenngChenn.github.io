@@ -109,7 +109,7 @@
 
 在Vue中，一个组件本质上来说就是一个预定义选项的Vue实例，用Vue简单的来定义一个组件:1234// Define a new component called todo-itemVue.componen">
 <meta property="og:image" content="http://cn.vuejs.org/images/components.png">
-<meta property="og:updated_time" content="2017-01-19T14:51:33.741Z">
+<meta property="og:updated_time" content="2017-01-19T15:05:48.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-component">
 <meta name="twitter:description" content="组件的构成
@@ -334,7 +334,11 @@
 <p><img src="http://cn.vuejs.org/images/components.png" alt="application interface &amp; component tree"><br>在Vue中，一个组件本质上来说就是一个预定义选项的Vue实例，用Vue简单的来定义一个组件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Define a new component called todo-item</span><br><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  template: &apos;&lt;li&gt;This is a todo&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>现在可以把它和其他组件的模板构成在一起了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;!-- Create an instance of the todo-item component --&gt;</span><br><span class="line">  &lt;todo-item&gt;&lt;/todo-item&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure></p>
 <p><em>如果只写这两段代码的话在页面中是没有效果的</em><br>但是这样会给每一个todo渲染同样的文本，这样就不是很有趣，我们可以通过父作用域传递给子组件数据，让我们来修改一下组件定义使得它可以接受一个prop属性(字段)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  // The todo-item component now accepts a</span><br><span class="line">  // &quot;prop&quot;, which is like a custom attribute.</span><br><span class="line">  // This prop is called todo.</span><br><span class="line">  props: [&apos;todo&apos;],</span><br><span class="line">  template: &apos;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>现在我们可以用v-bind将todo向每个重复的组件传入：<br><strong>实例中 v-bind使用在标签内，用来绑定标签的属性，从而在js中改变标签属性值，而不直接操作DOM！</strong></p>
+<p>现在我们可以用v-bind将todo向每个重复的组件传入：<br><strong>实例中 v-bind使用在标签内，用来绑定标签的属性，从而在js中改变标签属性值，而不直接操作DOM！</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app-7&quot;&gt;</span><br><span class="line">  &lt;ol&gt;</span><br><span class="line">    &lt;!-- Now we provide each todo-item with the todo object    --&gt;</span><br><span class="line">    &lt;!-- it&apos;s representing, so that its content can be dynamic --&gt;</span><br><span class="line">    &lt;todo-item v-for=&quot;item in groceryList&quot; v-bind:todo=&quot;item&quot;&gt;&lt;/todo-item&gt;</span><br><span class="line">  &lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">Vue.component(&apos;todo-item&apos;, &#123;</span><br><span class="line">  props: [&apos;todo&apos;],</span><br><span class="line">  template: &apos;&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line">var app7 = new Vue(&#123;</span><br><span class="line">  el: &apos;#app-7&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    groceryList: [</span><br><span class="line">      &#123; text: &apos;Vegetables&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Cheese&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Whatever else humans are supposed to eat&apos; &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这只是一个人为假设的例子，但是我们把我们的应用分为了两个小的单元部分，子组件通过props接口合理的从父组件很好的解耦了。我们可以进一步的来优化<todo-item>组件，加入更多复杂的模板以及不影响父应用的逻辑。<br>在大型应用中，将整个应用分离到不同的组件中去，以便更好控制的开发是很必要的，我们在后面的教程中会讨论更多，但是这里有一个(虚构的)    展示一个带组件的应用模板可能会长什么样子的例子。</todo-item></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;app-nav&gt;&lt;/app-nav&gt;</span><br><span class="line">  &lt;app-view&gt;</span><br><span class="line">    &lt;app-sidebar&gt;&lt;/app-sidebar&gt;</span><br><span class="line">    &lt;app-content&gt;&lt;/app-content&gt;</span><br><span class="line">  &lt;/app-view&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,6 +370,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/10/javascript/unknownjs-second/" rel="prev" title="《你不知道的javascript(上)》第一章：作用域是什么  读书笔记">
+                《你不知道的javascript(上)》第一章：作用域是什么  读书笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -433,7 +441,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
