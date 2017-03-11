@@ -260,8 +260,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/26/javascript/unknownjs-forth/" itemprop="url">
-                  《你不知道的javascript(上)》第三章：函数作用域和块作用域  读书笔记
+                <a class="post-title-link" href="/2017/03/11/javascript/unknownjs-forth/" itemprop="url">
+                  《你不知道的javascript(上)》第五章：作用域闭包  读书笔记
                 </a>
               
             
@@ -274,8 +274,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-26T13:33:38+08:00" content="2017-02-26">
-              2017-02-26
+            <time itemprop="dateCreated" datetime="2017-03-11T13:33:38+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -323,7 +323,15 @@
       
         
           
-            
+            <h2 id="闭包的好处"><a href="#闭包的好处" class="headerlink" title="闭包的好处"></a>闭包的好处</h2><p>1.保护闭包函数内的变量安全，只有闭包才能使用<br>2.在内存中维持一个变量，不随着外部函数执行完而销毁，但会耗内存</p>
+<h2 id="闭包直截了当的定义"><a href="#闭包直截了当的定义" class="headerlink" title="闭包直截了当的定义"></a>闭包直截了当的定义</h2><p><strong>当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行</strong></p>
+<p>有段代码可以清晰的展示闭包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">  var a = 2;</span><br><span class="line">  </span><br><span class="line">  function bar()&#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  return bar;</span><br><span class="line">&#125;</span><br><span class="line">var baz = foo();</span><br><span class="line">baz(); //2  这就是闭包效果</span><br></pre></td></tr></table></figure></p>
+<p>分析：在这段代码中，函数bar()的词法作用域能够访问foo()的内部作用域，这里bar函数本身就扮演了一个值传递的角色，foo执行之后返回值赋值给变量baz，<br>调用baz()也就是是去执行foo函数，bar函数在自己定义的词法作用域之外执行，也就是在foo作用域之外被执行，就说明bar具有foo作用域的闭包。<br>因为闭包可以组织垃圾回收器回收像foo这种角色的函数，所以foo函数可以一直存活，之后还可以让bar()继续引用</p>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>近期在项目中有个很小的逻辑需求可以运用闭包，左侧是待选择列表，右侧是被选中的项目监控画面，想判断左侧被点击的项目右侧是否存在，那么就可以创建一个小闭包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function foo(sbbh)&#123;</span><br><span class="line">  var num = sbbh;</span><br><span class="line"></span><br><span class="line">  function isExist()&#123;</span><br><span class="line">    var ex,</span><br><span class="line">    a = true;</span><br><span class="line">    if(a)&#123;console.log(num);&#125;</span><br><span class="line">    else&#123;console.log(ex);&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return isExist;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var exist = foo(&quot;SBZP0001&quot;);</span><br><span class="line">exist();</span><br></pre></td></tr></table></figure></p>
+<p>这段代码和上面有异曲同工之处，上一版本则是只写了一个方法，方法中var一个名为ex变量，然后将设备编号传入，遍历是否已经存在此编号，如果已存在，则变量ex赋值true，并返回true，<br>否则ex赋值false，并返回，在函数外部var一个变量，将函数赋值给此变量，而用了闭包之后，外部的foo函数则不会被垃圾回收器所回收，可以一直被isExist函数所引用</p>
+<p>其实在很多地方我都使用了闭包然而并没有注意到，比如定时器或者事件监听等地方</p>
+<h2 id="循环和闭包"><a href="#循环和闭包" class="headerlink" title="循环和闭包"></a>循环和闭包</h2><p>只要在循环过程中用let代替var，再加上闭包则可以很简单的解决很多问题</p>
+
           
         
       
