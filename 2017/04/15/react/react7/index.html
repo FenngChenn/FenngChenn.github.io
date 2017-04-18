@@ -96,31 +96,22 @@
 
 
 
-<meta name="description" content="ReactDOM
-react-dom包提供了特有的DOM方法，可以被应用到你app的最外层，并且作为一个输出的出口，如果你需要的话，可以在React模板外面。你的大多数组件应该需要使用这个模块。
+<meta name="description" content="此条目展现了怎样联系到一个不是由React提供的DOM事件，对于其他库比如jQuery是一个很好的集成。
 
-ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [function callback])
-
-在提供的">
+1234567891011121314151617181920212223var Box = React.createClass(&amp;#123;  getInitialState: function() &amp;#123;    return &amp;#123;windowWidth: window.i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React学习六——ReactDOM">
-<meta property="og:url" content="http://yoursite.com/2016/12/01/react/ReactDOM/index.html">
+<meta property="og:title" content="react---DOM Event Listeners in a Component">
+<meta property="og:url" content="http://yoursite.com/2017/04/15/react/react7/index.html">
 <meta property="og:site_name" content="Springer of the spring">
-<meta property="og:description" content="ReactDOM
-react-dom包提供了特有的DOM方法，可以被应用到你app的最外层，并且作为一个输出的出口，如果你需要的话，可以在React模板外面。你的大多数组件应该需要使用这个模块。
+<meta property="og:description" content="此条目展现了怎样联系到一个不是由React提供的DOM事件，对于其他库比如jQuery是一个很好的集成。
 
-ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [function callback])
-
-在提供的">
-<meta property="og:updated_time" content="2016-12-18T10:24:25.107Z">
+1234567891011121314151617181920212223var Box = React.createClass(&amp;#123;  getInitialState: function() &amp;#123;    return &amp;#123;windowWidth: window.i">
+<meta property="og:updated_time" content="2017-04-18T14:19:45.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React学习六——ReactDOM">
-<meta name="twitter:description" content="ReactDOM
-react-dom包提供了特有的DOM方法，可以被应用到你app的最外层，并且作为一个输出的出口，如果你需要的话，可以在React模板外面。你的大多数组件应该需要使用这个模块。
+<meta name="twitter:title" content="react---DOM Event Listeners in a Component">
+<meta name="twitter:description" content="此条目展现了怎样联系到一个不是由React提供的DOM事件，对于其他库比如jQuery是一个很好的集成。
 
-ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [function callback])
-
-在提供的">
+1234567891011121314151617181920212223var Box = React.createClass(&amp;#123;  getInitialState: function() &amp;#123;    return &amp;#123;windowWidth: window.i">
 
 
 
@@ -141,9 +132,9 @@ ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [func
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/01/react/ReactDOM/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/15/react/react7/"/>
 
-  <title> React学习六——ReactDOM | Springer of the spring </title>
+  <title> react---DOM Event Listeners in a Component | Springer of the spring </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +264,7 @@ ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [func
             
             
               
-                React学习六——ReactDOM
+                react---DOM Event Listeners in a Component
               
             
           </h1>
@@ -285,11 +276,30 @@ ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [func
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-01T21:53:36+08:00" content="2016-12-01">
-              2016-12-01
+            <time itemprop="dateCreated" datetime="2017-04-15T22:14:36+08:00" content="2017-04-15">
+              2017-04-15
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -313,22 +323,13 @@ ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [func
       
 
       
-        <h2 id="ReactDOM"><a href="#ReactDOM" class="headerlink" title="ReactDOM"></a>ReactDOM</h2><blockquote>
-<p>react-dom包提供了特有的DOM方法，可以被应用到你app的最外层，并且作为一个输出的出口，如果你需要的话，可以在React模板外面。你的大多数组件应该需要使用这个模块。</p>
+        <blockquote>
+<p>此条目展现了怎样联系到一个不是由React提供的DOM事件，对于其他库比如jQuery是一个很好的集成。</p>
 </blockquote>
-<h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render"></a>ReactDOM.render</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">render(</span><br><span class="line">  ReactElement element,</span><br><span class="line">  DOMElement container,</span><br><span class="line">  [function callback]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在提供的container里向DOM中渲染ReactElement，然后向组件当中返回一个参考，或者对于无状态组件返回null</li>
-<li>如果ReactElement预先被渲染到了container中，那么在container中将会执行一个更新，必要的时候还会反映给最新的React组件去改变DOM结构</li>
-<li>如果参数callback方法存在，方法将会在组件被渲染完成或者更新完成之后执行。</li>
-</ul>
-<blockquote>
-<h4 id="Note："><a href="#Note：" class="headerlink" title="Note："></a>Note：</h4><ol>
-<li>ReactDOM.render()控制了你传入节点的容器内容，任何里面已存在的DOM元素在第一次被调用的时候都会被替换掉，然后调用React的DOM的diff算法进行有效率的更新。</li>
-<li>ReactDOM.render()不会修改容器的代码（只会修改容器的子结构），以后，很有可能向一个存在的DOM节点插入一个组件，而不是覆盖已存在的子结构。</li>
-<li>ReactDOM.render()目前是返回一个ReactComponent根节点实例。可是，使用这个返回值是继承性质的并且应该避免，因为未来React的版本在某种情况下可能会异步渲染组件。如果你需要一个ReactComponent根实例，那么首选的解决办法就是在根元素上链接一个回调函数。  </li>
-</ol>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var Box = React.createClass(&#123;</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    return &#123;windowWidth: window.innerWidth&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  handleResize: function(e) &#123;</span><br><span class="line">    this.setState(&#123;windowWidth: window.innerWidth&#125;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  componentDidMount: function() &#123;</span><br><span class="line">    window.addEventListener(&apos;resize&apos;, this.handleResize);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  componentWillUnmount: function() &#123;</span><br><span class="line">    window.removeEventListener(&apos;resize&apos;, this.handleResize);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return &lt;div&gt;Current window width: &#123;this.state.windowWidth&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Box /&gt;, mountNode);</span><br></pre></td></tr></table></figure>
+<p>componentDidMount在组件加载完成之后被调用，并且拥有DOM的表现。这通常是一个你可以联系到一般DOM事件的地方。<br>注意事件回调被绑定到了react组件而不是原始元素，对于你来说，React会通过一个自动绑定过程来自动绑定方法到现有组件实例中去。</p>
+<p><strong>如果使用ES6的话，那么遵循ES6 class的语义，就不会有自动绑定this到实例上，必须显式的用.bind(this)或者箭头函数=&gt;</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onClick=&#123;this.tick.bind(this)&#125;&gt;</span><br><span class="line">&lt;div onClick=&#123;() =&gt; this.tick()&#125;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>建议在构造函数中绑定事件处理器，这样对于所有实例只需绑定一次<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">constructor(props)&#123;</span><br><span class="line">  super(props);</span><br><span class="line">  this.tick = this.tick.bind(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -353,17 +354,13 @@ ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [func
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/08/react/react5/" rel="next" title="React学习五——react顶层API和children的子方法">
-                <i class="fa fa-chevron-left"></i> React学习五——react顶层API和children的子方法
+              <a href="/2017/03/25/react/react6/" rel="next" title="react---componentWillReceiveProps">
+                <i class="fa fa-chevron-left"></i> react---componentWillReceiveProps
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/13/react/react-programming-thinking/" rel="prev" title="react-programming-thinking">
-                react-programming-thinking <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -477,7 +474,7 @@ ReactDOM.render12345render(  ReactElement element,  DOMElement container,  [func
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ReactDOM"><span class="nav-number">1.</span> <span class="nav-text">ReactDOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ReactDOM-render"><span class="nav-number">1.1.</span> <span class="nav-text">ReactDOM.render</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Note："><span class="nav-number">1.1.1.</span> <span class="nav-text">Note：</span></a></li></ol></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

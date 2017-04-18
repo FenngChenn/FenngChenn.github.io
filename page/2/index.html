@@ -260,6 +260,256 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/13/react/react-programming-thinking/" itemprop="url">
+                  react-programming-thinking
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-13T22:32:29+08:00" content="2016-12-13">
+              2016-12-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Thinking-in-React"><a href="#Thinking-in-React" class="headerlink" title="Thinking in React"></a>Thinking in React</h2><ol>
+<li>将UI拆分成组件中的一个个层级<ul>
+<li>首先在设计师交出原型图时，可以和设计师确定这个页面可以分为哪几部分并命名，虽然此步骤非常简单，但是这相当于给我们建立了大纲</li>
+</ul>
+</li>
+<li>先建立一个react静态版本<ul>
+<li>需要使用props来建立静态版本而不需要使用state，state是为了时间变化的数据所准备的。组件中的层级是父子关系，props是一种从父级传递数据到子级的方式。</li>
+<li>当项目较简单时，可以自顶向下写层级关系，当项目较为复杂时，采用自底向上的方法更为清晰明了</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">var PRODUCTS = [</span><br><span class="line">  &#123;category: &apos;Sporting Goods&apos;, price: &apos;$49.99&apos;, stocked: true, name: &apos;Football&apos;&#125;,</span><br><span class="line">  &#123;category: &apos;Sporting Goods&apos;, price: &apos;$9.99&apos;, stocked: true, name: &apos;Baseball&apos;&#125;,</span><br><span class="line">  &#123;category: &apos;Sporting Goods&apos;, price: &apos;$29.99&apos;, stocked: false, name: &apos;Basketball&apos;&#125;,</span><br><span class="line">  &#123;category: &apos;Electronics&apos;, price: &apos;$99.99&apos;, stocked: true, name: &apos;iPod Touch&apos;&#125;,</span><br><span class="line">  &#123;category: &apos;Electronics&apos;, price: &apos;$399.99&apos;, stocked: false, name: &apos;iPhone 5&apos;&#125;,</span><br><span class="line">  &#123;category: &apos;Electronics&apos;, price: &apos;$199.99&apos;, stocked: true, name: &apos;Nexus 7&apos;&#125;</span><br><span class="line">];</span><br><span class="line">var ProductTable = React.createClass(&#123;</span><br><span class="line">  render: function()&#123;</span><br><span class="line">   var rows = [];</span><br><span class="line">   var lastCategory = null;</span><br><span class="line">   this.props.products.forEach(function(product)&#123;</span><br><span class="line">   ...</span><br><span class="line">   &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">var SearchBar = React.createClass(&#123;</span><br><span class="line">  render: function()&#123;</span><br><span class="line">  return(</span><br><span class="line">   &lt;input type=&quot;text&quot; placeholder=&quot;Search...&quot; /&gt;</span><br><span class="line">   ...</span><br><span class="line">  );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var FilterableProductTable = React.createClass(&#123;</span><br><span class="line">  render: function()&#123;</span><br><span class="line"> 	return(</span><br><span class="line"> 	  &lt;div&gt;</span><br><span class="line"> 	    &lt;SearchBar /&gt;</span><br><span class="line"> 	    &lt;ProductTable products=&#123;this.props.products&#125; /&gt;</span><br><span class="line"> 	  &lt;/div&gt;</span><br><span class="line"> 	);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;FilterableProductTable products=&#123;PRODUCTS&#125; /&gt;,</span><br><span class="line">  document.getElementById(&apos;html中需要显示的最外层容器&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="props-vs-state"><a href="#props-vs-state" class="headerlink" title="props vs state"></a>props vs state</h2><ul>
+<li>props作为从父级传递子级数据的方式，仅仅适合于静态文件，而当页面中数据需要变动时不适用</li>
+</ul>
+<p>3.确定最小的UI State表达</p>
+<blockquote>
+<p>这三个问题则是判断是不是state的关键点<br>(1).它是通过props从父级传递来的吗？如果是，它可能不是 state。<br>(2).它随时间变化吗？如果不是,它可能不是 state。<br>(3).你能基于其他任何组件里的 state 或者 props 计算出它吗？如果是,它可能不是state.</p>
+</blockquote>
+<p>4.确定state应该在哪里</p>
+<blockquote>
+<p>确定哪个组件可以修改或者拥有着这个state<br>记住：React在组件层级中是单向数据流动的</p>
+<ul>
+<li>确定哪些组件是根据state来渲染内容的</li>
+<li>找到一个所有需要state的组件的父级，这个父级必须要在目标组件之上，并且只有一个</li>
+<li>如果找不到这样一个更高的层级，那么就简单的创建一个新的组件，并把它添加到比共同拥有者组件更高的层级上</li>
+</ul>
+</blockquote>
+<p>在共同拥有者处添加getInitialState方法, 通过props传递state, 而组成初始state的有filterText和inStockOnly两个属性</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/01/react/ReactDOM/" itemprop="url">
+                  React学习六——ReactDOM
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-01T21:53:36+08:00" content="2016-12-01">
+              2016-12-01
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ReactDOM"><a href="#ReactDOM" class="headerlink" title="ReactDOM"></a>ReactDOM</h2><blockquote>
+<p>react-dom包提供了特有的DOM方法，可以被应用到你app的最外层，并且作为一个输出的出口，如果你需要的话，可以在React模板外面。你的大多数组件应该需要使用这个模块。</p>
+</blockquote>
+<h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render"></a>ReactDOM.render</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">render(</span><br><span class="line">  ReactElement element,</span><br><span class="line">  DOMElement container,</span><br><span class="line">  [function callback]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在提供的container里向DOM中渲染ReactElement，然后向组件当中返回一个参考，或者对于无状态组件返回null</li>
+<li>如果ReactElement预先被渲染到了container中，那么在container中将会执行一个更新，必要的时候还会反映给最新的React组件去改变DOM结构</li>
+<li>如果参数callback方法存在，方法将会在组件被渲染完成或者更新完成之后执行。</li>
+</ul>
+<blockquote>
+<h4 id="Note："><a href="#Note：" class="headerlink" title="Note："></a>Note：</h4><ol>
+<li>ReactDOM.render()控制了你传入节点的容器内容，任何里面已存在的DOM元素在第一次被调用的时候都会被替换掉，然后调用React的DOM的diff算法进行有效率的更新。</li>
+<li>ReactDOM.render()不会修改容器的代码（只会修改容器的子结构），以后，很有可能向一个存在的DOM节点插入一个组件，而不是覆盖已存在的子结构。</li>
+<li>ReactDOM.render()目前是返回一个ReactComponent根节点实例。可是，使用这个返回值是继承性质的并且应该避免，因为未来React的版本在某种情况下可能会异步渲染组件。如果你需要一个ReactComponent根实例，那么首选的解决办法就是在根元素上链接一个回调函数。  </li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/08/react/react5/" itemprop="url">
                   React学习五——react顶层API和children的子方法
                 </a>
@@ -279,6 +529,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -406,6 +675,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -843,6 +1131,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -1170,217 +1477,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/31/react/react1/" itemprop="url">
-                  React学习一——属性
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-31T22:56:36+08:00" content="2016-05-31">
-              2016-05-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="React属性的用法"><a href="#React属性的用法" class="headerlink" title="React属性的用法"></a>React属性的用法</h2><p><strong>第一种</strong><br><em>键值对的赋值形式</em></p>
-<p>直接在属性后加字符串/{数值}/{字符串}/{数组}/{变量}</p>
-<p><strong>第二种</strong><br>三个点的展开形式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;HelloWorld &#123;...props&#125;&gt;</span><br><span class="line"></span><br><span class="line">var props = &#123;</span><br><span class="line">	one: &apos;123&apos;,</span><br><span class="line">	two: 321</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此时的props是一个对象，对象中包含其属性</p>
-<p><strong>第三种</strong><br>实际生活中不会去使用，不写出来了</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/30/React/" itemprop="url">
-                  用Hexo搭建博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T21:17:10+08:00" content="2016-05-30">
-              2016-05-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Hexo-初识"><a href="#Hexo-初识" class="headerlink" title="Hexo 初识"></a>Hexo 初识</h2><p>Hexo对于初学者来说无疑是带有神秘色彩的，它的主题方案很引人注目，Landscape主题算是比较常见的，个人主页中的图片<br>可以定时切换，</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1426,7 +1522,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
